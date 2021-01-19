@@ -79,6 +79,7 @@ void SDLAppDisplay::setClearColour(vec4 colour) {
 Uint32 SDLAppDisplay::SDLWindowFlags(bool fullscreen) {
 #if SDL_VERSION_ATLEAST(2,0,0)
     Uint32 flags = SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN;
+    flags |= SDL_WINDOW_ALLOW_HIGHDPI;
 
     if (frameless) flags |= SDL_WINDOW_BORDERLESS;
     if (resizable && !frameless) flags |= SDL_WINDOW_RESIZABLE;
